@@ -37,18 +37,18 @@ function App() {
           <Route exact path='/dashboard'>
             <Dashboard></Dashboard>
           </Route>
-          <Route exact path='/dashboard/adminAddService'>
+          <PrivateRoute exact path='/dashboard/adminAddService'>
             <AdminAddService></AdminAddService>
-          </Route>
-          <Route exact path='/dashboard/allOrderedList'>
+          </PrivateRoute>
+          <privateRoute exact path='/dashboard/allOrderedList'>
             <AllOrderedList></AllOrderedList>
-          </Route>
-          <Route exact path='/dashboard/addAdmin'>
+          </privateRoute>
+          <PrivateRoute exact path='/dashboard/addAdmin'>
             <AddAdmin></AddAdmin>
-          </Route>
-          <Route exact path='/dashboard/clientOrderedList'>
+          </PrivateRoute>
+          <PrivateRoute exact path='/dashboard/clientOrderedList'>
             <ClientOrderedList></ClientOrderedList>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute exact path='/dashboard/postReview'>
             <PostReview></PostReview>
           </PrivateRoute>
