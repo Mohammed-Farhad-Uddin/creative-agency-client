@@ -1,13 +1,14 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import HeaderNav from '../Home/Header/HeaderNav';
 import DashboardList from './DashboardList/DashboardList';
 
 const Dashboard = () => {
     return (
-        <div>
+        <Container>
             <HeaderNav></HeaderNav>
             <DashboardList></DashboardList>
-        </div>
+        </Container>
     );
 };
 
