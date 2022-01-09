@@ -1,0 +1,17 @@
+.form{
+    border-radius: 10px;
+    background-color: white;
+    width: 80%;
+    margin-bottom: 40px;
+}
+.input {
+    padding: 3px 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 10px 0px;
+    width: 50%;
+}
+.input:focus{
+    color: black;
+    background-color: rgb(201, 197, 191);
+}

@@ -1,24 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import AddAdmin from "./Components/Dashboard/AddAdmin/AddAdmin";
+import AdminAddService from "./Components/Dashboard/AdminAddService/AdminAddService";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
+import PostReview from "./Components/Dashboard/PostReview/PostReview";
+import AllOrderedList from "./Components/Dashboard/AllOrderedList/AllOrderedList";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Order from "./Components/Dashboard/Order/Order";
+import PrivateRoute from "./Components/Login/PrivateRoute";
+import ClientOrderedList from "./Components/Dashboard/ClientOrderedList/ClientOrderedList";
+
+export const UserContext = createContext();
 
 function App() {
+  const [userLoggedIn, setUserLoggedIn] = useState({
+    displayName: '',
+    email: '',
+    photo: ''
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[userLoggedIn, setUserLoggedIn]}>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home></Home>
+          </Route>
+          <Route exact path='/home'>
+            <Home></Home>
+          </Route>
+          <Route exact path='/dashboard'>
+            <Dashboard></Dashboard>
+          </Route>
+          <Route exact path='/dashboard/adminAddService'>
+            <AdminAddService></AdminAddService>
+          </Route>
+          <Route exact path='/dashboard/allOrderedList'>
+            <AllOrderedList></AllOrderedList>
+          </Route>
+          <Route exact path='/dashboard/addAdmin'>
+            <AddAdmin></AddAdmin>
+          </Route>
+          <Route exact path='/dashboard/clientOrderedList'>
+            <ClientOrderedList></ClientOrderedList>
+          </Route>
+          <PrivateRoute exact path='/dashboard/postReview'>
+            <PostReview></PostReview>
+          </PrivateRoute>
+          <PrivateRoute exact path='/dashboard/order/:id'>
+            <Order></Order>
+          </PrivateRoute>
+          <Route exact path='/login'>
+            <Login></Login>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

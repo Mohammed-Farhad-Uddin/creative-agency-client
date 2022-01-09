@@ -1,0 +1,6 @@
+.ul li{
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    padding: 5px;
+}

@@ -1,0 +1,9 @@
+.review-card{
+    border: 1px solid rgba(107, 107, 107, 0.384);
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+.break{
+    word-break: break-all;
+    color: rgba(107, 107, 107, 0.774);
+}

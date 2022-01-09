@@ -1,0 +1,14 @@
+.services{
+    margin: 100px 0px;
+}
+.box{
+    width: 90%;
+    margin: 0px auto;
+    padding: 50px 20px;
+}
+.box:nth-child(2n){
+    box-shadow: 1px 1px 10px rgb(230, 221, 221);
+}
+h2,h6{
+    font-weight: bolder;
+}
