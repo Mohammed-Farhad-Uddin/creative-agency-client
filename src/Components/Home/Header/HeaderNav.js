@@ -5,11 +5,13 @@ import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png'
 import './HeaderNav.css';
 import { getAuth, signOut } from "firebase/auth";
+import { useHistory } from 'react-router-dom';
 
 
 
 
 const HeaderNav = () => {
+    const history= useHistory();
     const [userLoggedIn, setUserLoggedIn] = useContext(UserContext)
 
     const googleSignOut = () => {
@@ -20,6 +22,7 @@ const HeaderNav = () => {
                 email: '',
                 photo: ''
               })
+              history.replace('/home');
         }).catch((error) => {
             // An error happened.
         });
